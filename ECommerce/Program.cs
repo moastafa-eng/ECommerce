@@ -1,3 +1,8 @@
+using ECommerce.Contexts;
+using ECommerce.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 namespace ECommerce
 {
     public class Program
@@ -8,6 +13,14 @@ namespace ECommerce
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Configure DbContext : 
+            builder.Services.AddDbContext<ECommerceDbContext>(Options =>
+            {
+                Options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+
+            });
+            
 
             var app = builder.Build();
 
@@ -29,6 +42,7 @@ namespace ECommerce
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
+            AppDbInitializer.Seed(app);
 
             app.Run();
         }
