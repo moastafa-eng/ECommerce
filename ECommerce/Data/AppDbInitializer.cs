@@ -6,6 +6,9 @@ namespace ECommerce.Data
 {
     public class AppDbInitializer
     {
+        // This method is used to seed (add) initial data into the database when the application starts.
+        // It creates a temporary service scope to safely get the database context (ECommerceDbContext),
+        // ensures the database is created, and then you can add your initial data inside it.
         public static void Seed(IApplicationBuilder Builder)
         {
                        using (var serviceScope = Builder.ApplicationServices.CreateScope())
@@ -41,11 +44,12 @@ namespace ECommerce.Data
 
                     context.Categories.AddRange(Categories);
                     context.SaveChanges();
+                    }
 
-                    // Add Products
-                    if(!context.Products.Any())
-                    {
-                        var Products = new List<Product>()
+                // Add Products
+                if (!context.Products.Any())
+                {
+                    var Products = new List<Product>()
                         {
                             new Product
                             {
@@ -78,9 +82,8 @@ namespace ECommerce.Data
                             },
                         };
 
-                        context.Products.AddRange(Products);
-                        context.SaveChanges();
-                    }
+                    context.Products.AddRange(Products);
+                    context.SaveChanges();
                 }
             }
         }
