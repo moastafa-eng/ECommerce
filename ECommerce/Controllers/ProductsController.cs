@@ -25,7 +25,10 @@ namespace ECommerce.Controllers
         // because the server can handle other user requests while waiting for the database.
         public async Task<IActionResult> Index()
         {
-            var Respons = await _context.Products.ToListAsync();
+            // Include() is used to load the related Category data for each Product.
+            // Without this, Category would be null, and accessing item.Category.Name in the View would cause an error.
+            var Respons = await _context.Products.Include(x => x.Category)
+                .OrderBy(x => x.Price).ToListAsync(); 
             return View(Respons);
         }
     }

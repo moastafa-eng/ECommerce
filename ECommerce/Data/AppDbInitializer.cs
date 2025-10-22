@@ -56,7 +56,7 @@ namespace ECommerce.Data
                                 Name = "P1",
                                 Description = "P1",
                                 Price = 1200,
-                                ImageUrl = "https...",
+                                ImageUrl = "/Images/t100-plus-purple--1000x1000.jpg",
                                 ProductColor = ProductColor.Red,
                                 CategoryId = 1
                             },
@@ -66,7 +66,7 @@ namespace ECommerce.Data
                                 Name = "P2",
                                 Description = "P2",
                                 Price = 1350,
-                                ImageUrl = "https...",
+                                ImageUrl = "/Images/product_309525_product_shots1.jpg",
                                 ProductColor = ProductColor.Green,
                                 CategoryId = 2
                             },
@@ -76,10 +76,21 @@ namespace ECommerce.Data
                                 Name = "P3",
                                 Description = "P3",
                                 Price = 1500,
-                                ImageUrl = "https...",
+                                ImageUrl = "/Images/S8-Ultra-Smart-Watch-Unique-Gadget-BD.jpg",
                                 ProductColor = ProductColor.Yellow,
                                 CategoryId = 3
                             },
+
+                            new Product
+                            {
+                                Name = "P4",
+                                Description = "P4",
+                                Price = 2000,
+                                ImageUrl = "/Images/s-l1600.jpg",
+                                ProductColor = ProductColor.Black,
+                                CategoryId = 2
+
+                            }
                         };
 
                     context.Products.AddRange(Products);

@@ -14,4 +14,14 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\61ZjlBOp+rL.jpg" />
+    <None Include="wwwroot\Images\apple_mlcg2ll_a_watch_sport_smartwatch_38mm_1187203.jpg" />
+    <None Include="wwwroot\Images\product_309525_product_shots1.jpg" />
+    <None Include="wwwroot\Images\s-l1600.jpg" />
+    <None Include="wwwroot\Images\S8-Ultra-Smart-Watch-Unique-Gadget-BD.jpg" />
+    <None Include="wwwroot\Images\t100-plus-purple--1000x1000.jpg" />
+    <None Include="wwwroot\Images\ZvwaRXmA.jpg" />
+  </ItemGroup>
+
 </Project>
